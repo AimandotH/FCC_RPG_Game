@@ -20,7 +20,7 @@ const weapons = [
   { name: "stick", power: 5 },
   { name: "dagger", power: 30 },
   { name: "claw", power: 50 },
-  { name: "twin swords", power: 100 },
+  { name: "excalibur", power: 100 },
 ];
 const monsters = [
   {
