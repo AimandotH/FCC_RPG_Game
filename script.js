@@ -76,7 +76,7 @@ const locations = [
       "Go to town square",
     ],
     "button functions": [goTown, goTown, easterEgg],
-    text: 'The monster screams "YABAI!" as it dies. You gain experience points and find gold.',
+    text: 'The monster screams "Agh!" as it dies. You gain experience points and find gold.',
   },
   {
     name: "lose",
