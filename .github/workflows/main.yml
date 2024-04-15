@@ -20,10 +20,13 @@ jobs:
                 Authorization: `Bearer patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089`
               },
               data: {
-                "issue": {
-                  "id": modifiedBody,
-                  "fields": {
-                    "Status": "UAT",
-                }
+                "records": [
+                  {
+                    "id": modifiedBody,
+                    "fields": {
+                      "Status": "UAT"
+                    }
+                  }
+                ]
               }
-            }});
+            });
