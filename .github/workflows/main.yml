@@ -15,10 +15,9 @@ jobs:
             const regex = /Airtable ID:\n(.+)/g;
             const modifiedBody = context.payload.issue.body.replace(regex, 'modified-value');
 
-            await github.request('PATCH https://api.airtable.com/v0/appO3Dnw1AxvkmGZx/Internal%20List', {
-              headers: {
-                Authorization: `Bearer patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089`
-              },
+            await github.request('PATCH https://api.airtable.com/v0/appO3Dnw1AxvkmGZx/Internal%20List', 
+            {
+              headers: {Authorization: `Bearer patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089`},
               data: {
                 "records": [
                   {
