@@ -1,0 +1,29 @@
+name: Issue Closed
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  call-api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call API
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const regex = /Airtable ID:\n(.+)/g;
+            const modifiedBody = context.payload.issue.body.replace(regex, 'modified-value');
+
+            await github.request('POST https://api.airtable.com/v0/appO3Dnw1AxvkmGZx/Internal%20List', {
+              headers: {
+                Authorization: `Bearer patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089`
+              },
+              data: {
+                "issue": {
+                  "id": modifiedBody,
+                  "fields": {
+                    "Status": "UAT",
+                }
+              }
+            });
