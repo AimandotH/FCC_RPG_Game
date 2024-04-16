@@ -10,6 +10,8 @@ jobs:
     steps:
       - name: Call API
         uses: actions/github-script@v5
+        env: 
+          AIRTABLE_TOKEN: 'patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089' #store into Airtable secret and change this to ${{ secrets.AIRTABLE_TOKEN}} 
         with:
           script: |
             const regex = /Airtable ID:\n(.+)/g;
@@ -17,7 +19,7 @@ jobs:
 
             await github.request('PATCH https://api.airtable.com/v0/appO3Dnw1AxvkmGZx/Internal%20List', 
             {
-              headers: {Authorization: `Bearer patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089`},
+              headers: {'Authorization': `Bearer ${process.env.AIRTABLE_TOKEN}`},
               data: {
                 "records": [
                   {
