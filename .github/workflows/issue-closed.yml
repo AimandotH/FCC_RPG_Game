@@ -17,7 +17,7 @@ jobs:
           node-version: '16'
 
       - name: Execute Script
-      uses: actions/github-script@v5
+        uses: actions/github-script@v5
         env: 
           AIRTABLE_TOKEN: 'patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089' #store into Airtable secret and change this to ${{ secrets.AIRTABLE_TOKEN}}
         with:
