@@ -14,13 +14,13 @@ jobs:
       - name: Install Node
         uses: actions/setup-node@v2
         with: 
-          node-version: '14'
+          node-version: '16'
 
       - name: Execute Script
         env: 
           AIRTABLE_TOKEN: 'patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089' #store into Airtable secret and change this to ${{ secrets.AIRTABLE_TOKEN}}
         run: |
-          const axios = require('axios');
+          import axios from 'axios';
 
           const regex = /Airtable ID:\n(.+)/g;
           const modifiedBody = context.payload.issue.body.replace(regex, 'modified-value');
