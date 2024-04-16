@@ -16,6 +16,9 @@ jobs:
         with: 
           node-version: '16'
 
+      - name: Enable experimental modules
+        run: echo "node --experimental-modules" > ~/.bashrc
+
       - name: Execute Script
         env: 
           AIRTABLE_TOKEN: 'patM4RDthL4UGB7ah.3c7ad13af02bc9c5d838a6c7a19d3dadc43b52fe6d3ebed2935d5964e61bd089' #store into Airtable secret and change this to ${{ secrets.AIRTABLE_TOKEN}}
