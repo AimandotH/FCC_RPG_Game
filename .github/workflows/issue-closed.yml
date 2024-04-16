@@ -16,6 +16,9 @@ jobs:
         with: 
           node-version: '16'
 
+      - name: Install axios
+        run: npm install axios
+        
       - name: Execute Script
         uses: actions/github-script@v5
         env: 
