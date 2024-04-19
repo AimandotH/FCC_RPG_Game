@@ -32,7 +32,7 @@ jobs:
             const body = {
               "records": [
                 {
-                  "id": modifiedBody,
+                  "id": "recK9ZaAq5ZUK0Pn0",
                   "fields": {
                     "Status": "UAT"
                   }
