@@ -29,6 +29,8 @@ jobs:
             const regex = /Airtable ID:\n(.+)/g;
             const modifiedBody = context.payload.issue.body.replace(regex, 'modified-value');
 
+            console.log(modifiedBody);
+            
             const body = {
               "records": [
                 {
